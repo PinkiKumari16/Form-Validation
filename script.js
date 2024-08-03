@@ -7,7 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const errorMessage = document.getElementById('errorMessage');
     const haveAccount = document.getElementById('haveAccount');
     const number = document.getElementById('number')
+    const email = document.getElementById('email')
 
+    const data = [];
 
     let showPassword = false;
     togglePassword.addEventListener('click', () => {
@@ -69,6 +71,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         errorMessage.textContent = '';
         alert('Sign Up Successfully...');
+
+        data.push({
+            "email": email.value, 
+            "password": password.value, 
+            "number": number.value
+        });
+        console.log(data);
         form.reset();
     });
 
